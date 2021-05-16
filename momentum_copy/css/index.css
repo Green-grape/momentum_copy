@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    position: relative;
+    width:100%;
+    height:200px;
+}
+
+body{
+    background-color: #34495e;
+}
+
+li{
+    display: block;
+}
+
+.form,
+.greeting,
+.list {
+    display: none;
+}
+
+.center{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.bottom{
+    position: absolute;
+    top:100%;
+    left:0;
+    transform: translateY(-100%);
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.relative{
+    position: relative;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.blind{
+    position: absolute;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    width:1px;
+    height:1px;
+}
+
+.textOverflowEllipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
+
+.bgImage{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    animation: fadeIn .5s linear;
+}
+
+.js-clock h1{
+    font-size: 150px;
+    color:white;
+    font-weight: bold;
+}
+
+.js-form input,
+.js-greetings{
+    color:white;
+    border: none;
+    background-color:inherit;
+    text-align: center;
+    font-size:40px;
+    margin-bottom: 10px;
+}
+
+.js-form input{
+    text-decoration-line: underline;
+}
+
+.js-form input::placeholder{
+    color:white;
+}
+
+.js-toDoForm input{
+    border: none;
+    background-color:inherit;
+    text-align: center;
+    text-decoration-line: underline;
+    color:#bdc3c7;
+    font-size:25px;
+    margin-bottom: 10px;
+}
+
+.js-toDoForm input::placeholder{
+    color:#bdc3c7;
+}
+
+.listStyle{
+    position: relative;
+    color:white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.cancelButtonStyle{
+    background-color: inherit;
+    border: none;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+
+.weather{
+    position: absolute;
+    top:0;
+    right:0;
+    margin: 6px 10px 0 0;
+    color:white;
+    font-style: italic;
+}
+
+@keyframes arrowBoxAnimation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.8;
+    }
+}
+
+.arrowBox{
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    background-color: black;
+    color:white;
+    z-index:1;
+    transition: all .5s ease-in-out;
+}
+
+.arrowBox::after{
+    opacity: 0.8;
+    content:"";
+    position: absolute;
+    bottom:100%;
+    left:75%;
+    border-style: solid;
+    border-color:transparent transparent black transparent;
+    transition: all .5s ease-in-out;
+}
+
+
+.weatherBox{
+    width:400px;
+    height:200px;
+    border-radius: 10px;
+    top:70px;
+    right:20px;
+}
+
+.weatherBox::after{
+    border-width:10px;
+    margin-left:-10px;
+}
+
+.searchBox{
+    width:200px;
+    height:100px;
+    border-radius: 5px;
+    top:70px;
+    left:20px;
+}
+
+.searchBox::after{
+    border-width: 10px;
+    margin-left:-10px;
+}
+
+.appearAct{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.weatherBox-body{
+    height:120px;
+}
+
+.weatherBox-body-futureInfo{
+    position: absolute;
+    width:90%;
+    left:5%;
+    border-top: solid white;
+    border-bottom: solid white;
+}
+
+.weatherBox-footer{
+    text-align: center;
+}
+
+.weatherBox-footer span{
+    position: absolute;
+    top:39%;
+    margin-left:6px;
+    transform: translateY(-50%);
+    font-size:12px;
+    color:white;
+}
+
+input:focus{
+    outline: none;
+}
+
+.js-bgInfo{
+    height:40px;
+    width:150px;
+    margin:0px 0px 12px 16px;
+    list-style: none;
+}
+
+.bgLocation{
+    position: absolute;
+    top:0;
+    left:0;
+    transition: all .5s ease-in-out;
+    color:white;
+}
+
+.js-bgInfo:hover .bgLocation{
+    transform:translateY(-6px); /*translate는 반대*/
+}
+
+.bgDescription{
+    position: absolute;
+    opacity: 0;
+    top:12px;
+    left:0;
+    white-space: nowrap;
+    transition: all .5s ease-in-out;
+}
+
+.js-bgInfo:hover .bgDescription{
+    opacity: 1;
+    transform:translateY(6px);
+}

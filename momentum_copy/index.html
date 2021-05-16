@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Something</title>
+        <title>Momentum_Copy</title>
         <meta charset="utf-8"/>
-        <link rel='stylesheet' href="./index.css">
+        <link rel='stylesheet' href="./css/weather-icons.min.css">
+        <link rel='stylesheet' href="./css/index.css">
     </head>
 
     <body>
+        <header>
+            <form class='search'>
+                <img class='search-icon inline-block'></img>
+                <input type='text'>
+                <div class='searchBox arrowBox'>
+                    <ul class='search-engines'>
+
+                    </ul>
+                </div>
+            </form>
+            <div class='weather'>
+                <i class="wi"></i>
+                <div class='js-weather'></div>
+            </div>
+            <div class='weatherBox arrowBox'>
+                <div class='weatherBox-header'>
+                    <div class='weatherBox-header-location'></div>
+                    <div class='weatherBox-header-des'></div>
+                </div>
+                <div class='weatherBox-body'>
+                    <div class='weatherBox-body-todayInfo'>
+                        <i class="wi inline-block"></i>
+                    </div>
+                    <div class='weatherBox-body-futureInfo'>
+                        <ul class='inline-block'>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class='weatherBox-footer relative'>
+                    <a href="https://openweathermap.org/">
+                        <span class='weatherBox-footer-description'>Go for more information</span>
+                    </a>
+                    <h4 class='blind'>날씨링크</h4>
+                </div>
+            </div>
+        </header>
+       
         <div class='center textCenter'>
             <div class="js-clock">
                 <h1>00:00</h1>
@@ -20,7 +59,15 @@
             </form>
             <ul class='js-toDoList'></ul>
         </div>
-        <span class='js-weather'></span>
+       
+        <footer class='bottom'>
+            <ul class='js-bgInfo relative'>
+                <li class='js-bgLocation bgLocation'></li>
+                <li class='js-bgDescription bgDescription'></li>
+            </ul>
+        </footer>
+        <script src='./lodash.min.js'></script>
+        <script src='./search.js'></script>
         <script src="./clock.js"></script>
         <script src="./greeting.js"></script>
         <script src='./todo.js'></script>

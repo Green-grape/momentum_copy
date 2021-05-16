@@ -24,7 +24,7 @@ function handleDelete(event){
 }
 
 function paintToDo(text){
-    const li=document.createElement('ul');
+    const li=document.createElement('li');
     const span=document.createElement('span');
     const delBtn=document.createElement('button');
     const newToDOId=idNumber;
