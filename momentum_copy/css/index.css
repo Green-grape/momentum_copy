@@ -21,6 +21,10 @@ li{
     display: block;
 }
 
+input{
+    border:none;
+}
+
 .form,
 .greeting,
 .list {
@@ -132,6 +136,12 @@ li{
     border: none;
     vertical-align: middle;
     margin-bottom: 5px;
+}
+
+.search-input{
+    border-bottom: solid white;
+    background-color: transparent;
+    color:white;
 }
 
 
