@@ -9,8 +9,8 @@ Search 🔺 (make fit to format)
 ToDoList 🔺 (make fit to format)
    
 To Do List   
-Make fit to format(weather, search, todolist)
-code optimization
+Make fit to format(weather, search, todolist)   
+code optimization   
 
   
 
