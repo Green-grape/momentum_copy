@@ -6,8 +6,12 @@ Background ✔
 Weather 🔺 (make fit to format)   
 Clock ✔   
 Search 🔺 (make fit to format)   
+ToDoList 🔺 (make fit to format)
    
 To Do List   
-Todolist ❌   
+Make fit to format(weather, search, todolist)
+code optimization
+
+  
 
 
