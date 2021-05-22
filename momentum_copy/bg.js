@@ -35,6 +35,8 @@ function handleInfo(info){
         }
     }
     a_tag.innerText=description;
+    a_tag.style.width='inherit';
+    a_tag.style.display='block';
     a_tag.style.color='white';
     a_tag.classList.add(textOverflow_CLASS);
     imageLoc.innerHTML=location;

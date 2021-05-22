@@ -13,7 +13,7 @@
                 <img class='search-icon inline-block'></img>
                 <input class='search-input' type='text'/>
                 <img class='search-engine-icon inline-block'></img>
-                <div class='searchBox arrowBox'>
+                <div class='searchBox downArrowBox'>
                     <ul class='search-engines'>
 
                     </ul>
@@ -23,7 +23,7 @@
                 <i class="wi"></i>
                 <div class='js-weather'></div>
             </div>
-            <div class='weatherBox arrowBox'>
+            <div class='weatherBox downArrowBox'>
                 <div class='weatherBox-header'>
                     <div class='weatherBox-header-location'></div>
                     <div class='weatherBox-header-des'></div>
@@ -48,24 +48,49 @@
         </header>
        
         <div class='center textCenter'>
-            <div class="js-clock">
+            <div class="js-clock clock">
                 <h1>00:00</h1>
             </div>
             <form class='js-form form'>
                 <input type='text' placeholder="What is your name?" />
             </form>
             <h4 class='js-greetings greetings'></h4>
-            <form class='js-toDoForm'>
-                <input type='text' placeholder="Write a to do" />
-            </form>
-            <ul class='js-toDoList'></ul>
         </div>
        
         <footer class='bottom'>
-            <ul class='js-bgInfo relative'>
+            <ul class='js-bgInfo bgInfo relative inline-block'>
                 <li class='js-bgLocation bgLocation'></li>
                 <li class='js-bgDescription bgDescription'></li>
             </ul>
+            <div class='toDo inline-block'>
+                <div class='js-toDoBox toDoBox upArrowBox'>
+                    <div class='toDoBox-header relative'>
+                        <span class='js-toDoBox-header-title toDoBox-header-title vertical-center'></span>
+                        <span class='js-toDoBox-header-option toDoBox-header-option vertical-center'>
+                            <div class='line'></div>
+                            <div class='line'></div>
+                            <div class='line'></div>
+                        </span>
+                    </div>
+                    <div class='toDoBox-body'>
+                        <div class='toDoBox-body-startToDo center'>
+                            <div class='js-toDoBox-body-startToDo-description toDoBox-body-startToDo-description'></div>
+                            <div class='js-toDoBox-body-startToDo-button toDoBox-body-startToDo-button horizontal-center'></div>
+                        </div>
+                        <ul class='js-toDoBox-body-toDoList'></ul>
+                    </div>
+                    <div class='toDoBox-footer'>
+                        <form class='js-toDoBox-footer-form toDoBox-footer-form vertical-center'>
+                            <input type='text' placeholder="Write a to do"/>
+                        </form>
+                    </div>
+                </div>
+                <div class='js-toDo-text toDo-text'></div>
+            </div>
+            <!-- <form class='js-toDoForm toDoForm'>
+                <input type='text' placeholder="Write a to do" />
+            </form>
+            <ul class='js-toDoList toDoList'></ul> -->
         </footer>
         <script src='./lodash.min.js'></script>
         <script src='./search.js'></script>

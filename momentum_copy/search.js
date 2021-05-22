@@ -63,7 +63,7 @@ function initSearchEngineIcon(){
     let currentEngine=localStorage.getItem(CURRENT_ENGINE);
     if(currentEngine===null || currentEngine.length===0){
         currentEngine='google';
-        localStorage.setItem(currentEngine);
+        localStorage.setItem(CURRENT_ENGINE, currentEngine);
     }
 
     let imgName='';

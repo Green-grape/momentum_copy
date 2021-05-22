@@ -18,6 +18,7 @@ const dayDic={
     6:'SUN',
 };
 
+//Weatherbox
 function setWeatherBoxHeader(){
     const header=weatherBox.querySelector('.weatherBox-header');
     const location=header.querySelector('.weatherBox-header-location');
@@ -82,6 +83,7 @@ function setWeatherInfo(){
     })
 }
 
+//Get weather by using openweathermap API
 async function getWeatherToday(lat, lon){
     const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
     const json=await response.json();
@@ -108,6 +110,7 @@ async function getWeatherFuture(lat, lon){
     return json;
 }
 
+//Main function
 async function getWeather(lat, lon){
     todayWeather=(await getWeatherToday(lat,lon));
     futureWeather=(await getWeatherFuture(lat,lon));
