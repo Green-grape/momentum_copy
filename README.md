@@ -3,14 +3,14 @@
 Done list
 
 Background ✔   
-Weather 🔺 (make fit to format)   
+Weather ✔   
 Clock ✔   
-Search 🔺 (make fit to format)   
-ToDoList 🔺 (make fit to format)
+Search ✔  
+ToDoList ✔ 
    
 To Do List   
-Make fit to format(weather, search, todolist)   
 code optimization   
+
 
   
 
