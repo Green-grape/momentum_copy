@@ -11,11 +11,11 @@ const toDoText=document.querySelector('.toDo .js-toDo-text');
 const toDoForm=document.querySelector('.toDo .js-toDoBox-footer-form');
 const toDoInput=toDoForm.querySelector('input');
 
-
-
 const TODOS_LS='toDos';
 const LISTSTYLE_CLASS='listStyle';
 const BUTTONSTYLE_CLASS='cancelButtonStyle';
+const ORI_TODOBOX_BODY_HEIGHT='120px';
+const TODOLIST_ELEMENT_HEIGHT=20;
 let toDos=[];
 let idNumber=1;
 
@@ -29,17 +29,23 @@ function setToDoBoxHeader(){
     toDoBoxTitle.innerHTML='ToDo';
 }
 
-//ToDoBox Body
-
-
 //ToDOList 
-function saveToDos(){
+function saveToLocal(){
     localStorage.setItem(TODOS_LS,JSON.stringify(toDos));
 }
 
-function handleDescription(){
-    if(toDos.length===0) description.style.visibility='visible';
-    else description.style.visibility='hidden';
+function handleInitState(){
+    const toDoBoxBody=toDoBox.querySelector('.toDoBox-body');
+    if(toDos.length===0){
+        description.style.visibility='visible';
+        startButton.style.visibility='visible';
+        toDoBoxBody.style.height=ORI_TODOBOX_BODY_HEIGHT;
+    }
+    else{
+        description.style.visibility='hidden';
+        startButton.style.visibility='hidden';
+        toDoBoxBody.style.height=`${Math.min(ORI_TODOBOX_BODY_HEIGHT,TODOLIST_ELEMENT_HEIGHT*toDos.length)}px`;
+    } 
 }
 
 function handleDelete(event){
@@ -50,8 +56,8 @@ function handleDelete(event){
         return toDo.id!==parseInt(li.id);
     });
     toDos=cleanToDos;
-    saveToDos();
-    handleDescription();
+    saveToLocal();
+    handleInitState();
 }
 
 function paintToDo(text){
@@ -68,6 +74,7 @@ function paintToDo(text){
     li.appendChild(span);
     li.id=newToDOId;
     li.classList.add(LISTSTYLE_CLASS);
+    li.classList.add('textOverflowEllipsis');
     toDoList.appendChild(li);
    
     const toDoObj={
@@ -76,8 +83,8 @@ function paintToDo(text){
     }
     toDos.push(toDoObj);
     idNumber+=1;
-    saveToDos();
-    handleDescription();
+    saveToLocal();
+    handleInitState();
 }
 
 function initToDo(){
@@ -87,7 +94,7 @@ function initToDo(){
         startButton.style.visibility='hidden';
         toDoForm.style.visibility='visible';
     })
-    handleDescription();
+    handleInitState();
 }
 
 function loadToDos(){
@@ -102,6 +109,7 @@ function loadToDos(){
                 paintToDo(toDo.text);
             }
         );
+        initToDo();
     }
 }
 
@@ -115,7 +123,6 @@ function setToDoBoxFooter(){
         event.preventDefault();
         const currentValue=toDoInput.value;
         paintToDo(currentValue);
-        console.log(currentValue);
     });
 }
 
@@ -137,11 +144,6 @@ function setToDoText(){
         }
     })
 }
-
-//ToDOList 
-// function saveToDos(){
-//     localStorage.setItem(TODOS_LS,JSON.stringify(toDos));
-// }
 
 function init(){
    setToDoBox();

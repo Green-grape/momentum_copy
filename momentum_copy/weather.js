@@ -34,7 +34,7 @@ function setWeatherBoxBody(){
     const futureWeatherList=body.querySelector('ul');
 
     todayWeatherIcon.classList=weatherIcon.classList;
-    todayWeatherIcon.innerHTML=weatherIcon.innerHTML;
+    todayWeatherIcon.innerHTML=` ${parseInt(weatherIcon.innerHTML,10)}°`;
     for(let i=1;i<=5;i++){
         const targetDay=futureWeather.daily[i];
         const li=document.createElement('li');
@@ -52,11 +52,11 @@ function setWeatherBoxBody(){
         dayWeather.append(maxTemp);
         dayWeather.append(minTemp);
 
-        const temp_date=new Date(targetDay.dt);
+        const temp_date=new Date(targetDay.dt*1000);
         day.innerHTML=dayDic[temp_date.getDay()];
         icon.classList.add(`wi-owm-day-${targetDay.weather[0].id}`);
-        maxTemp.innerHTML=` ${targetDay.temp.max}`;
-        minTemp.innerHTML=` ${targetDay.temp.min}`;
+        maxTemp.innerHTML=` ${parseInt(targetDay.temp.max,10)}° `;
+        minTemp.innerHTML=` ${parseInt(targetDay.temp.min,10)}° `;
         futureWeatherList.append(li);
     }
 }

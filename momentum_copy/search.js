@@ -29,8 +29,8 @@ function setFirstLetterUpper(text){
 
 function setSearchIcon(){
     searchIcon.src='./images/search_icon.png';
-    searchIcon.height=32;
-    searchIcon.width=32;
+    searchIcon.height=24;
+    searchIcon.width=24;
 }
 
 function setSearchForm(engineName){
@@ -71,8 +71,8 @@ function initSearchEngineIcon(){
     else if(currentEngine==='naver') imgName='naver';
 
     searchEngineIcon.src=`${IMAGE_LOC}${imgName}${IMAGE_FORMAT}`;
-    searchEngineIcon.height=32;
-    searchEngineIcon.width=32;
+    searchEngineIcon.height=24;
+    searchEngineIcon.width=24;
     searchEngineIcon.addEventListener('click', function(){
         searchEngineBox.classList.toggle('appearAct');
     })
@@ -90,13 +90,16 @@ function changeSearchEngineIcon(engineName){
 
 function setSearchEngines(){
     const searchEngineUl=searchEngineBox.querySelector('ul');
+    const searchEngineDes=searchEngineBox.querySelector('.searchBox-Des');
+    searchEngineDes.innerText='Search With';
     for(let i=0;i<SEARCH_ENGINES.length;i++){
         const element=document.createElement('li');
+        element.classList.add('relative');
         const engineName=document.createElement('span');
         const engineIcon=document.createElement('img');
         engineIcon.classList.add('inline-block');
 
-        element.innerHTML=setFirstLetterUpper(SEARCH_ENGINES[i]);
+        engineName.innerHTML=` ${setFirstLetterUpper(SEARCH_ENGINES[i])}`;
         engineIcon.src=`${IMAGE_LOC}${SEARCH_ENGINES[i]}${IMAGE_FORMAT}`;
         engineIcon.height=20;
         engineIcon.width=20;
